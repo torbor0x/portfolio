@@ -3,6 +3,7 @@ import { ScrollGlow } from "@/components/ScrollGlow";
 import { SiteNav } from "@/components/SiteNav";
 import { copy, profile } from "@/lib/content";
 import { getSiteUrl } from "@/lib/site";
+import { Analytics } from "@vercel/analytics/next";
 import type { Metadata, Viewport } from "next";
 import { Geist, JetBrains_Mono } from "next/font/google";
 import type { ReactNode } from "react";
@@ -95,6 +96,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <Footer />
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         </div>
+        <Analytics />
       </body>
     </html>
   );
